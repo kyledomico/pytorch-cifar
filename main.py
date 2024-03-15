@@ -154,4 +154,4 @@ for epoch in range(start_epoch, start_epoch+200):
     scheduler.step()
 
 # Save the model
-torch.save(net, '../../../cifar10+{}.pt'.format(args.model))
+torch.save(net, 'cifar10+{}.pt'.format(args.model))
