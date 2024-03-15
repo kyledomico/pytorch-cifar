@@ -12,8 +12,6 @@ import os
 import argparse
 
 from models import *
-from utils import progress_bar
-
 
 parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
 parser.add_argument('--model', default='resnet18', type=str, help='model name')
