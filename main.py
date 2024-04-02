@@ -136,9 +136,7 @@ def test(epoch):
             'acc': acc,
             'epoch': epoch,
         }
-        if not os.path.isdir('checkpoint'):
-            os.mkdir('checkpoint')
-        torch.save(state, './checkpoint/ckpt.pth')
+        torch.save(state, './cifar10+{}.pth'.format(args.model))
         best_acc = acc
 
 
@@ -146,6 +144,3 @@ for epoch in range(start_epoch, start_epoch+200):
     train(epoch)
     test(epoch)
     scheduler.step()
-
-# Save the model
-torch.save(net.state_dict(), 'cifar10+{}.pt'.format(args.model))
